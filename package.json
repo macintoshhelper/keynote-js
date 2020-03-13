@@ -1,0 +1,39 @@
+{
+  "name": "keynote-js",
+  "version": "0.0.1",
+  "description": "JavaScript interface for Keynote (Mac slideshow app)",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node lib/index.js",
+    "build": "babel -d lib src --extensions .ts",
+    "watch": "babel -d lib src --extensions .ts --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macintoshhelper/keynote-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/macintoshhelper/keynote-js/issues"
+  },
+  "homepage": "https://github.com/macintoshhelper/keynote-js#readme",
+  "dependencies": {
+    "@jxa/run": "^1.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-typescript": "^7.8.3",
+    "@jxa/global-type": "^1.3.1",
+    "@rollup/plugin-json": "^4.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "rollup": "^2.0.5",
+    "rollup-plugin-babel": "^4.4.0",
+    "typescript": "^3.8.3"
+  }
+}
