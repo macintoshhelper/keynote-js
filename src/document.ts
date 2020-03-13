@@ -6,7 +6,7 @@ import { run } from '@jxa/run';
 
 import { Slide } from './slide';
 
-const getDocuments = async (conditions) => {
+const getDocuments = async (conditions: { [key: string]: any }) => {
   const res: string = await run(conditions => {
     let documents;
     if (conditions) {
@@ -80,7 +80,7 @@ const getSelectedDocument = async () => {
   const { slides, selectedSlide } = JSON.parse(res);
 
   return {
-    slides: slides.map((slide) => new Slide({ id: slide.id })),
+    slides: slides.map((slide: { id: number }) => new Slide({ id: slide.id })),
     selectedSlide: new Slide({ id: selectedSlide.id })
   };
 }
@@ -126,7 +126,7 @@ export class Document {
   document?: { height: number, width: number };
   slides?: Slide[];
 
-  constructor(props) {
+  constructor(props: { [key: string]: any }) {
 
     this.props = props;
   }
@@ -141,6 +141,7 @@ export class Document {
       let theme;
 
       if (props.theme && typeof props.theme !== 'string' && props.theme.id) {
+        //@ts-ignore
         theme = Keynote.themes.whose({ id: theme.id }).first;
       }
 

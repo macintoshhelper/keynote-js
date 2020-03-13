@@ -44,7 +44,7 @@ export class Group {
   props: { [key: string]: any };
   id: string;
 
-  constructor(props) {
+  constructor(props: { [key: string]: any }) {
 
     this.props = props;
   }

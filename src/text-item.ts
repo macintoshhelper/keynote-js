@@ -48,7 +48,7 @@ export class TextItem {
   props: { [key: string]: any };
   id: string;
 
-  constructor(props) {
+  constructor(props: { [key: string]: any }) {
 
     this.props = props;
   }

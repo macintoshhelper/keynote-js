@@ -45,7 +45,7 @@ export class Slide {
 
   slide: { id: number, index: number };
 
-  constructor(props) {
+  constructor(props: { [key: string]: any }) {
 
     this.props = props;
   }
@@ -121,13 +121,13 @@ export class Slide {
     this.slide = properties;
   }
 
-  async setTitle(title, style) {
+  async setTitle(title: string, style: { [key: string]: any }) {
     const { id, props } = this;
 
     console.log(JSON.stringify({ id, props, title }, null, 2));
 
     await run((props = {}) => {
-      function hexToRGB(h) {
+      function hexToRGB(h: string) {
         let r: string | number = 0, g: string | number = 0, b: string | number = 0;
 
         // 3 digits
@@ -169,7 +169,7 @@ export class Slide {
     }, { title, id, style, ...props });
   }
 
-  async setBody(title) {
+  async setBody(title: string) {
     const { id, props } = this;
 
     await run((props = {}) => {

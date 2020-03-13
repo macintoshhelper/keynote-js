@@ -1,11 +1,15 @@
 {
   "name": "keynote-js",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "JavaScript interface for Keynote (Mac slideshow app)",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "start": "node lib/index.js",
-    "build": "babel -d lib src --extensions .ts",
+    "clean": "rm -rf lib/",
+    "build:js": "babel -d lib src --extensions .ts",
+    "build:types": "tsc -d true --emitDeclarationOnly --declarationDir lib",
+    "build": "npm run clean && npm run build:js && npm run build:types",
     "watch": "babel -d lib src --extensions .ts --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

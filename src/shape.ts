@@ -29,7 +29,7 @@ export class Shape {
   id?: number;
   index: number;
 
-  constructor(props) {
+  constructor(props: { [key: string]: any }) {
 
     this.props = props;
   }
